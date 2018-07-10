@@ -27,7 +27,7 @@ def unicode_csv_reader(utf8_data, dialect=csv.excel, **kwargs):
     """ python2-3 csv.reader that can handle unicode (utf-8) files """
     csv_reader = csv.reader(utf8_data, dialect=dialect, **kwargs)
     for row in csv_reader:
-        yield [unicode(cell, 'utf-8') for cell in row]
+        yield [cell for cell in row]
 
 
 def translate_dialog_to_lists(dialog_filename):
